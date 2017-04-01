@@ -1,0 +1,35 @@
+{
+  "name": "jeroldhaas.github.io",
+  "version": "1.0.0",
+  "description": "site",
+  "main": "index.js",
+  "dependencies": {
+    "markdown": "^0.5.0",
+    "react": "^15.4.2",
+    "zurb-foundation-6-prebuilt": "^6.3.1"
+  },
+  "devDependencies": {
+    "connect": "^3.6.0",
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "vscode:prepublish": "node bin/build.js",
+    "vscode:debug": "npm test",
+    "test": "node_modules/.bin/http-server.cmd -o --cors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeroldhaas/jeroldhaas.github.io.git"
+  },
+  "keywords": [
+    "github",
+    "blog",
+    "jeroldhaas"
+  ],
+  "author": "Jerold Haas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeroldhaas/jeroldhaas.github.io/issues"
+  },
+  "homepage": "https://github.com/jeroldhaas/jeroldhaas.github.io#readme"
+}

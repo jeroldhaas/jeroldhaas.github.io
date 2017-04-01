@@ -1,0 +1,55 @@
+<h1>Markdown Test File</h1>
+
+<p>This is a test file for conversion from markdown to html content files. A
+master template file will handle the outer wrapping, but these files
+will handle the inner content</p>
+
+<h2>Tests</h2>
+
+<p>These separate sections should test various aspects of markdown.</p>
+
+<h3>Default Formatting Tests</h3>
+
+<p>Font styles such as <strong>bold text</strong>, <em>italic text</em>, etc. ...</p>
+
+<blockquote><p>quoted text</p></blockquote>
+
+<p><img alt="example image" src="content/images/bkg.png"/></p>
+
+<ul><li>first</li><li>second</li><li><p>third</p></li><li><p>first</p></li><li>second</li><li>third</li></ul>
+
+<p><strong>broken</strong></p>
+
+<ul><li>[ ] tickbox one</li><li>[ ] tickbox two</li><li>[ ] tickbox three</li></ul>
+
+<p><code>
+let github_codeblock = false
+type WhyIsItSometimesWorking () =
+    member x.Reason = None
+    member x.Cause = Some &quot;mystery&quot;
+</code></p>
+
+<hr/>
+
+<h3>Code Tests</h3>
+
+<p>Github-style code blocks won&#39;t work with the default dialect: indentation will.</p>
+
+<pre><code>let foo = 1.2f
+
+type DiscUnion =
+    | Success of Choice1Of2 * result
+    | Failure of Choice2Of2 * errorMessage
+    | Unkown of mysteryValueReason</code></pre>
+
+<p>The above, hopefully, will display formatted (further testing will 
+demonstrate success). It seems that indentation-style code blocks
+are a little more reliable than the triple-backtick style - not
+sure why yet. Inline examples, such as <code>let foo = &quot;test&quot;</code>
+will exemplify itself.</p>
+
+<h3>Emoji Conversion / Graceful Handling</h3>
+
+<p>I&#39;m not sure if the <code>markdown</code> library can gracefully handle emoji characters
+or not, so I&#39;ll include a few in this paragraph just in case there&#39;s an issue
+with doing so: \u231B </p>
