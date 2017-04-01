@@ -4,8 +4,12 @@
   "description": "site",
   "main": "index.js",
   "dependencies": {
+    "fontawesome": "^4.7.2",
     "markdown": "^0.5.0",
+    "normalize.css": "^6.0.0",
     "react": "^15.4.2",
+    "react-fontawesome": "^1.5.0",
+    "react-foundation": "^0.7.0",
     "zurb-foundation-6-prebuilt": "^6.3.1"
   },
   "devDependencies": {
@@ -15,6 +19,7 @@
   "scripts": {
     "vscode:prepublish": "node bin/build.js",
     "vscode:debug": "npm test",
+    "build": "node bin/build.js",
     "test": "node_modules/.bin/http-server.cmd -o --cors"
   },
   "repository": {

@@ -3,7 +3,12 @@
 
 <head>
     <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileImage" content="/content/images/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+
 
     <link rel="manifest" href="/content/images/manifest.json">
     <link rel="apple-touch-icon" sizes="57x57" href="/content/images/apple-icon-57x57.png">
@@ -19,27 +24,31 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/content/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/content/images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/content/images/favicon-16x16.png">
-    <meta name="msapplication-TileImage" content="/content/images/ms-icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
 
     <!--<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">-->
     <!--<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">-->
     <!--<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">-->
-    <link rel="stylesheet" href="./content/css/foundation.css" type="text/css">
-    <!--<link rel="stylesheet" href="content/css/app.css" type="text/css">-->
+    <link rel="stylesheet" href="/content/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/foundation.css" type="text/css">
+    <link rel="stylesheet" href="/content/css/app.css" type="text/css">
 
     <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
     <!--<script type="text/javascript" src="javascripts/parallax.js"></script>-->
     <!--<script type="text/javascript" src="javascripts/parallax.min.js"></script>-->
-    <script src="./content/js/jquery.js" type="text/javascript"></script>
-    <script src="./content/js/foundation.js" type="text/javascript"></script>
-    <script src="./content/js/react-with-addons.js" type="text/javascript"></script>
+    <script src="/content/js/jquery.js" type="text/javascript"></script>
+    <script src="/content/js/foundation.js" type="text/javascript"></script>
+    <script src="/content/js/what-input.js" type="text/javascript"></script>
+    <script src="/content/js/react-with-addons.js" type="text/javascript"></script>
 
     <title>Jerold Haas</title>
 </head>
 
 <body>
+
 <!--
     <header>
         <div class="container">
@@ -165,69 +174,53 @@
     </div>
 -->
 
-    <nav aria-label="You are here:" role="navigation" class="">
-        <ul class="breadcrumbs left">
-            <li><a href="#"></a></li>
+    <header id="top-bar" aria-label="you are here:" role="heading" class="row expanded">
+        <div id="logo" class="columns small-2" title="I don't really look like this..."></div>
+        <div class="columns small-10">
+            <h1 id="title" class="text-center small-pull-1">Naught, Not Knot!</h2>
+        </div>
+    </header>
+    <nav id="crumb-bar" role="navigation" aria-label="you are here" class="row expanded">
+        <ul class="columns breadcrumbs left" role="navigation">
+            <li>
+                <a href="/">Home</a>
+            </li>
         </ul>
     </nav>
+    <div id="content-container" role="application" class="row expanded">
+        <section id="left-nav" class="columns small-2" aria-roledescription="main navigation" role="navigation">
+            <ul>
+                <li><a href="#" title="blog entries or utter nonsense, whichever comes first, or latest" onClick="{getWritings}">Writings</a></li>
+                <li><a href="#" title="feed pull of public repositories from github and gitlab">Code / Projects</a></li>
+                <li><a href="#" title="current feed pull from linkedin">Work History</a></li>
+            </ul>
+        </section>
+        <section id="content" class="columns small-10 flex-child-grow" aria-roledescription="main content" role="contentinfo">
+            <p>lorem ipsum dolor sit amet</p>
+        </section>
+    </div>
+
 
     <script type="text/javascript">
         var gaJsHost = (("https:" === document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
     </script>
+
     <script type="text/javascript">
-            try {
-                var pageTracker = _gat._getTracker("UA-57345776-1");
-                pageTracker._trackPageview();
-            } catch (err) {
-            }
+        try {
+            var pageTracker = _gat._getTracker("UA-57345776-1");
+            pageTracker._trackPageview();
+        } catch (err) {
+        }
     </script>
-    <!--
-        <script type="text/javascript">
-            // parallax.js stuff
-            var p = parallax;
-            /*
-            p.add('intro', $('#intro'))
-                    .add('welcome', $('#main-content'))
-                    .add('templates', $('#templates'))
-                    .add('drivestick', $('#drivestick'))
-                    .add('authors', $('#authors'))
-                    .add('support', $('#support'));
-            */
-            p.add($('section'));
-            
-            p.background = $("body");
-            p.scaling = 0.8;
 
-            p.speed = 800;
-            p.easing = "swing";
-
-            p.last = p.intro;
-
-            $(document).keydown(function (e) {
-                if (e.keyCode === 37) { // left key
-                    p.left();
-                }
-                if (e.keyCode === 38) { // up key
-                    p.top();
-                }
-                if (e.keyCode === 39) { // right key
-                    p.right();
-                }
-                if (e.keyCode === 40) { // down key
-                    p.bottom();
-                }
-            });
-
-            p.intro.show();
-
-        </script>
-    -->
     <script type="text/javascript">
         $(document).foundation();
     </script>
 
+    <script id="articles-json" type="application/json" src="content/html/articles/json"></script>
 
+    <script src="/content/js/app.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -3,28 +3,37 @@
     // for the documentation about the tasks.json format
     "version": "0.1.0",
     "command": "npm",
-    "isShellCommand": true,
+    //"isShellCommand": true,
     "showOutput": "always",
     "suppressTaskName": true,
     "tasks": [
         {
             "taskName": "install",
-            "args": ["install"]
+            "args": [
+                "install"
+            ]
         },
         {
             "taskName": "update",
-            "args": ["update"]
+            "args": [
+                "update"
+            ]
         },
         {
             "taskName": "test",
-            "args": ["run", "test"]
+            "isShellCommand": true,
+            "command": "npm test",
+            "suppressTaskName": true,
+            // "args": ["run", "test"]
+            "args": []
         },
         {
             "taskName": "build",
             "isShellCommand": true,
             "isBuildCommand": true,
+            "suppressTaskName": true,
             "command": "npm run-script vscode:prepublish",
-            "args": [ ]
+            "args": []
         }
     ]
 }

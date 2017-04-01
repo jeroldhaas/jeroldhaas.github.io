@@ -1,0 +1,86 @@
+:root {
+    --darktone: #363333;
+    --midtone:  #484444;
+    --lighttone: #726666;
+    --brighttone: #af9999;
+    --titlefont: 'Macondo';
+    --normalfont: 'PT sans';
+    --titlebarheight: 120px;
+}
+
+body {
+    background-color: var(--lighttone);
+    font-family: var(--normalfont), sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--titlefont), serif;
+    font-weight: bolder;
+}
+
+#top-bar {
+    /*height: 100px;*/
+    background-color: var(--darktone);
+    color: var(--lighttone);
+}
+#row-one-third-height {
+    display: flex;
+    height: 33%;
+}
+#logo {
+    background-image: url('/content/images/JeroldHaas.Avatar.png');
+    background-size: 100%, 100%;
+    background-color: var(--darktone);
+    margin-top: 12px;
+    height: var(--titlebarheight);
+    width: var(--titlebarheight);
+    transition: background-image 3s 0s;
+}
+#logo:hover {
+    background-image: url('/content/images/JeroldHaas.ProfileImage.jpg');
+    transition: background-image 5s 3s;
+}
+#title {
+    margin: calc(120px * 0.33) 0 0 0;
+}
+#crumb-bar {
+    background-color: var(--darktone);
+    color: var(--lighttone);
+}
+#content-container {
+    height: calc(100vh - var(--titlebarheight));
+    /*flex-direction: row;
+    flex: 1 0 100vh;*/
+}
+#left-nav {
+    padding: 24px 0 24px 0;
+    background-color: var(--midtone);
+    height: calc(100vh - var(--titlebarheight));
+}
+#left-nav > ul {
+    list-style-type: none;
+}
+#left-nav a {
+    color: var(--brighttone);
+    transition: text-shadow 500ms;
+}
+#left-nav a:hover {
+    text-shadow:
+        -1px -1px 0 var(--lighttone),
+        1px -1px 0 var(--lighttone),
+        -1px 1px 0 var(--lighttone),
+        1px 1px 0 var(--lighttone);
+    transition: text-shadow 500ms;
+    /*text-decoration: underline wavy;*/
+}
+#content {
+    padding: 24px 24px 24px 24px;
+    height: calc(100vh - var(--titlebarheight));
+}
+
+#content p {
+    text-indent: 24px;
+}
+
+
+

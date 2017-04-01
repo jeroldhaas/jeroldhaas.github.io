@@ -11,6 +11,10 @@ var fs          = require('fs');
 // files to copy: array of source-destination objects
 //
 var srcDestArray = [
+    // NORMALIZE
+    // css
+    { source: 'node_modules/normalize/normalize.css',                                 destination: 'content/css/normalize.css'              },
+
     // FOUNDATION
     // css
     // { source: 'node_modules/zurb-foundation-6-prebuilt/css/app.css',                  destination: 'content/css/app.css'            },
@@ -39,8 +43,8 @@ var copyFile = ({source: src, destination: dest}) => {
     fs.exists(src, (exists) => {
         if (exists) {
             fs.createReadStream(src)
-              .pipe(fs.createWriteStream(dest))
-              .end(() => console.log('copied file: ' + dest));
+              .pipe(fs.createWriteStream(dest));
+            console.log('copied file: ' + dest);
         } else {
             console.error('Error (\x1b[1mcopyFile\x1b[0m): file ' + src + ' doesn\'t exist');
         }
@@ -71,12 +75,12 @@ fs.readdir(mdSrcDir, (err, files) => {
                         if (err) {
                             console.error('Error opening file: ' + err.message);
                         } else {
-                            // console.info(md.toHTML(data.toString()));
+                            // console.log(md.toHTML(data.toString()));
                             fs.writeFile(newFile, md.toHTML(data.toString()), (err) => {
                                 if (err) {
                                     console.error('Error writing file: ' + err.message);
                                 } else {
-                                    console.info('converted file: ' + oldFile + ' to: ' + newFile);
+                                    console.log('converted file: ' + oldFile + ' to: ' + newFile);
                                 }
                             });
                         }
